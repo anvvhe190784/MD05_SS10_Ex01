@@ -1,0 +1,16 @@
+# ==========================================
+# Bài tập 1: Kết nối SSH tới VPS Ubuntu từ Windows PowerShell
+# ==========================================
+
+# 1. Kết nối bằng tài khoản mặc định (root hoặc ubuntu tùy Cloud Provider)
+# - Trường hợp dùng mật khẩu (DigitalOcean / Vultr / Linode):
+ssh root@<VPS_PUBLIC_IP>
+
+# - Trường hợp dùng file khóa .pem tải từ Cloud (AWS EC2 / GCP):
+ssh -i "C:\Users\vanan\.ssh\<your-key>.pem" ubuntu@<VPS_PUBLIC_IP>
+
+# 2. Các lệnh kiểm tra thông tin hệ điều hành sau khi đăng nhập thành công vào VPS
+lsb_release -a
+uname -a
+whoami
+ip a
